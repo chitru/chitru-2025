@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Threads from "@/components/threads";
 import SplitText from "@/components/splittext";
 import Link from "next/link";
 import Image from "next/image";
