@@ -12,7 +12,6 @@ const page = () => {
     const subtitleRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-        // Add global error handler to catch the 'j' variable error
         const handleError = (event: ErrorEvent) => {
             console.error('Global error caught:', {
                 message: event.message,
@@ -73,13 +72,13 @@ const page = () => {
     }, []);
     return (
         <div>
-            <div className="absolute inset-0 -z-10 h-full w-full bg-slate-800 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:18px_32px]">
+            <div className="h-full absolute inset-0 -z-10 w-full bg-slate-800 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:18px_32px]">
                 <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]">
                 </div>
             </div>
-            <div className='h-screen w-screen flex flex-col items-center justify-center'>
+            <div className='sm:h-auto md:h-screen flex flex-col sm:flex-row items-center justify-center gap-4 p-5'>
 
-                <div className="max-w-md mx-auto">
+                <div className="">
                     <div className="backdrop-blur-md bg-white/5 border border-white/5 rounded-2xl p-8 shadow-4xl shadow-white/10 ">
                         <div className="flex flex-col mb-6">
                             <h1 className="text-5xl tracking-tight font-[400] mb-2 font-[family-name:var(--font-playfair-display)] italic text-white" ref={subtitleRef}>
@@ -91,9 +90,9 @@ const page = () => {
                             className="text-lg max-w-sm text-gray-300 font-[family-name:var(--font-dm-sans)] mb-6 text-white"
                         >
                             Crafting digital experience with touch of creativity and passion since 2013. I focus on producing high quality products that functional and beautiful.
-                            <br /><br />I love building stuffs.
+                            <br /><br />I love building stuffs.<br/>I'm a full stack sfotware engineer with a passion for building beautiful and functional products.
                         </p>
-                        {/* <div
+                        <div
                             ref={linkRef}
                             className="flex flex-row gap-4 text-gray-300 text-lg font-[family-name:var(--font-dm-sans)] text-white"
                         >
@@ -103,15 +102,15 @@ const page = () => {
                             >
                                 Work with me
                             </Link>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
 
                 {/* Grid is now outside the max-w-md box and can expand to 2 columns */}
-                <div className="w-full max-w-md mx-auto mt-6">
+                <div className="max-w-md">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="backdrop-blur-md bg-white/10 border border-white/5 rounded-xl p-5 shadow-2xl shadow-white/10 hover:bg-white/10 transition-colors duration-300 hover:cursor-pointer aspect-square">
-                            <Link target="_blank" href="https://matinaa.com/" >
+                    <div className="backdrop-blur-md bg-white/5 border border-white/5 rounded-xl p-5 shadow-2xl shadow-white/10 relative aspect-square hover:bg-white/10 transition-colors duration-300 hover:cursor-pointer">
+                    <Link target="_blank" href="https://matinaa.com/" >
                                 <div className="flex flex-col">
                                     <h3 className="text-white text-md mt-3 font-[family-name:var(--font-dm-sans)]">
                                         matinaa.com
@@ -123,17 +122,23 @@ const page = () => {
                         <FlipCard />
                         <div className="backdrop-blur-md bg-white/5 border border-white/5 rounded-xl p-5 shadow-2xl shadow-white/10 relative aspect-square hover:bg-white/10 transition-colors duration-300 hover:cursor-pointer">
                             <Link target="_blank" href="https://www.10xdev.co" >
-                                <div className="flex flex-col">
-                                    <Image src="/dddepth-203.jpg" alt="Chitru Shrestha" width={100} height={100} className="rounded-2xl w-full h-full object-cover" />
-                                </div>
-                                <h3 className="text-white text-sm mt-3 font-[family-name:var(--font-dm-sans)] absolute bottom-8 left-8 bg-black/70 rounded-xs px-2">
-                                    10xdev.co
-                                </h3>
+                                <h3 className="text-white">RealEstate</h3>
+                                <p className="text-white text-sm mt-3 font-[family-name:var(--font-dm-sans)]">
+                                    A realestate app built with Next.js, Tailwind CSS, and TypeScript.
+                                </p>
                             </Link>
                         </div>
+                        <div className="backdrop-blur-md bg-white/5 border border-white/5 rounded-xl p-5 shadow-2xl shadow-white/10 relative aspect-square hover:bg-white/10 transition-colors duration-300 hover:cursor-pointer">
+                            <Link target="_blank" href="https://www.10xdev.co" >
+                                <h3 className="text-white"> 10xdev.co</h3>
+                                <p className="text-white text-sm mt-3 font-[family-name:var(--font-dm-sans)]">
+                                    Frontend development on subscription based SaaS platform.
+                                </p>
+                            </Link>
+                        </div>
+                        
                     </div>
                 </div>
-
             </div>
         </div>
     )
